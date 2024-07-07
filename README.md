@@ -112,7 +112,8 @@ CoolToggle:Set(true)
 
 
 
-## Создаем функцию выбора цвета
+## Создаем функцию палитра цветов
+
 ```lua
 Tab:AddColorpicker({
 	Name = "Выбрать Цвет",
@@ -129,7 +130,7 @@ Callback = <function> - Функция.
 ]]
 ```
 
-### Устанавливаем значение выбора цвета
+### Устанавливаем значение палитры цветов
 ```lua
 ColorPicker:Set(Color3.fromRGB(255,255,255))
 ```
@@ -235,10 +236,14 @@ Bind:Set(Enum.KeyCode.N)
 ```
 
 
-## Создаем открывающееся меню
+## Создаем раскрывающийся список
 ```lua
 Tab:AddDropdown({
+<<<<<<< HEAD
+	Name = "Список",
+=======
 	Name = "Меню",
+>>>>>>> 066858aaae132fdf68189f661f6abe6d5543f7f7
 	Default = "1",
 	Options = {"1", "2"},
 	Callback = function(Value)
@@ -247,10 +252,10 @@ Tab:AddDropdown({
 })
 
 --[[
-Name = <string> - Имя выпадающего меню.
+Name = <string> - Имя раскрывающегося списка.
 Default = <string> - Стандартное значение.
-Options = <table> - Опции в выпадающем меню.
-Callback = <function> - Функция выпадающего меню.
+Options = <table> - Опции в раскрывающемся списке.
+Callback = <function> - Функция раскрывающегося списка.
 ]]
 ```
 
@@ -260,20 +265,20 @@ Dropdown:Refresh(List<table>,true)
 ```
 
 Вышеупомянутое значение «true» определяет, будут ли текущие кнопки удалены.
-### Selecting a dropdown option
+### Добавляем варианты выбора
 ```lua
-Dropdown:Set("dropdown option")
+Dropdown:Set("вариант")
 ```
 
-# Finishing your script (REQUIRED)
-The below function needs to be added at the end of your code.
+# Заканчиваем наш скрипт (ОБЯЗАТЕЛЬНО)
+Функция ниже должна быть добавлена в САМЫЙ конец твоего скрипта.
 ```lua
 OrionLib:Init()
 ```
 
-### How flags work.
-The flags feature in the ui may be confusing for some people. It serves the purpose of being the ID of an element in the config file, and makes accessing the value of an element anywhere in the code possible.
-Below in an example of using flags.
+### Как работают "флаги".
+Функция флагов в пользовательском интерфейсе может сбить с толку некоторых людей. Он служит идентификатором элемента в файле конфигурации и делает возможным доступ к значению элемента в любом месте кода.
+Ниже пример использования флагов.
 ```lua
 Tab1:AddToggle({
     Name = "Toggle",
@@ -282,9 +287,9 @@ Tab1:AddToggle({
     Flag = "toggle"
 })
 
-print(OrionLib.Flags["toggle"].Value) -- prints the value of the toggle.
+print(OrionLib.Flags["toggle"].Value) -- Выводит значение в консоль.
 ```
-Flags only work with the toggle, slider, dropdown, bind, and colorpicker.
+Флаги работают только с переключателем, слайдером, раскрывающимся списком, биндом и палитрой цветов.
 
 ### Making your interface work with configs.
 In order to make your interface use the configs function you first need to add the `SaveConfig` and `ConfigFolder` arguments to your window function. The explanation of these arguments in above.
