@@ -238,7 +238,7 @@ Bind:Set(Enum.KeyCode.N)
 ## Создаем открывающееся меню
 ```lua
 Tab:AddDropdown({
-	Name = "Мень",
+	Name = "Меню",
 	Default = "1",
 	Options = {"1", "2"},
 	Callback = function(Value)
