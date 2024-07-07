@@ -1,5 +1,5 @@
-# Библиотека Orion
-Эта документация относится к стабильной версии библиотеки Orion.
+# Библиотека Орион
+Эта документация относится к стабильной версии библиотеки Орион.
 
 ## Загружаем библиотеку
 ```lua
@@ -14,7 +14,7 @@ local Window = OrionLib:MakeWindow({Name = "Название Окна Интер
 
 --[[
 Name = <string> - Название вашего интерфейса(обязательно в кавычках).
-HidePremium = <bool> - Показывает, является ли юзер премиумом или нет. true или false.
+HidePremium = <bool> - Показывает, является ли юзер премиумом или нет. Может быть true или false.
 SaveConfig = <bool> - вкл/выкл сохранение конфига. Желательно оставлять true.
 ConfigFolder = <string> - Название папки с конфигом(обязательно в кавычках).
 IntroEnabled = <bool> - Анимация при запуске. true или false
@@ -38,7 +38,7 @@ local Tab = Window:MakeTab({
 --[[
 Name = <string> - Имя вкладки.
 Icon = <string> - Иконка вкладки.
-PremiumOnly = <bool> - Делает вкладку доступной только премиум юзерам(оставлять false, если скрипт платный).
+PremiumOnly = <bool> - Делает вкладку доступной только премиум юзерам(оставлять false).
 ]]
 ```
 ## Создаем Раздел
@@ -51,47 +51,47 @@ local Section = Tab:AddSection({
 Name = <string> - Имя раздела.
 ]]
 ```
+Ты можешь добавлять элементы в разделы так же, как добавляешь их во вкладку.
 
-
-## Notifying the user
+## Уведомляем пользователя
 ```lua
 OrionLib:MakeNotification({
-	Name = "Title!",
-	Content = "Notification content... what will it say??",
+	Name = "Название",
+	Content = "Уведомление... что же там написано??",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
 
 --[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
+Title = <string> - Название уведомления.
+Content = <string> - Текст уведомления.
+Image = <string> - Картинка уведомления.
+Time = <number> - Длительность уведомления(сколько оно будет отображаться на экране).
 ]]
 ```
 
 
 
-## Creating a Button
+## Создаем кнопку
 ```lua
 Tab:AddButton({
-	Name = "Button!",
+	Name = "Кнопка",
 	Callback = function()
-      		print("button pressed")
+      		print("Кнопка нажата")
   	end    
 })
 
 --[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
+Name = <string> - Название кнопки.
+Callback = <function> - Функция кнопки.
 ]]
 ```
 
 
-## Creating a Checkbox toggle
+## Создаем переключатель(или тумблер, называйте как хотите)
 ```lua
 Tab:AddToggle({
-	Name = "This is a toggle!",
+	Name = "Это переключатель... или тумблер... я не определился при переводе",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
@@ -99,23 +99,23 @@ Tab:AddToggle({
 })
 
 --[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
+Name = <string> - Имя переключателя... или тумблера... я не определился.
+Default = <bool> - Значение переключателя или тумблера. Может быть true или false.
+Callback = <function> - Функция переключателя(ура наконец то я определился).
 ]]
 ```
 
-### Changing the value of an existing Toggle
+### Изменяем значение уже существующего переключателя
 ```lua
 CoolToggle:Set(true)
 ```
 
 
 
-## Creating a Color Picker
+## Создаем функцию выбора цвета
 ```lua
 Tab:AddColorpicker({
-	Name = "Colorpicker",
+	Name = "Выбрать Цвет",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
 		print(Value)
@@ -123,22 +123,22 @@ Tab:AddColorpicker({
 })
 
 --[[
-Name = <string> - The name of the colorpicker.
-Default = <color3> - The default value of the colorpicker.
-Callback = <function> - The function of the colorpicker.
+Name = <string> - Имя.
+Default = <color3> - Стандартное значение.
+Callback = <function> - Функция.
 ]]
 ```
 
-### Setting the color picker's value
+### Устанавливаем значение выбора цвета
 ```lua
 ColorPicker:Set(Color3.fromRGB(255,255,255))
 ```
 
 
-## Creating a Slider
+## Создаем слайдер
 ```lua
 Tab:AddSlider({
-	Name = "Slider",
+	Name = "Слайдер",
 	Min = 0,
 	Max = 20,
 	Default = 5,
@@ -151,50 +151,50 @@ Tab:AddSlider({
 })
 
 --[[
-Name = <string> - The name of the slider.
-Min = <number> - The minimal value of the slider.
-Max = <number> - The maxium value of the slider.
-Increment = <number> - How much the slider will change value when dragging.
-Default = <number> - The default value of the slider.
-ValueName = <string> - The text after the value number.
-Callback = <function> - The function of the slider.
+Name = <string> - Имя.
+Min = <number> - Мин. значение.
+Max = <number> - Макс. значение.
+Increment = <number> - Насколько будет меняться значение при изменении.
+Default = <number> - Стандартное значение.
+ValueName = <string> - Текст после значения.
+Callback = <function> - Функция слайдера(то есть значение чего именно будет менять слайдер).
 ]]
 ```
 
-### Change Slider Value
+### Изменяем значение уже существующего слайдера
 ```lua
 Slider:Set(2)
 ```
-Make sure you make your slider a variable (local CoolSlider = Tab:AddSlider...) for this to work.
+Убедись что сделал слайдер со значением (local CoolSlider = Tab:AddSlider...) чтобы это работало.
 
 
-## Creating a Label
+## Создаем лейбл
 ```lua
-Tab:AddLabel("Label")
+Tab:AddLabel("Лейбл")
 ```
 
-### Changing the value of an existing label
+### Изменяем значение уже существующего лейбла
 ```lua
-CoolLabel:Set("Label New!")
-```
-
-
-## Creating a Paragraph
-```lua
-Tab:AddParagraph("Paragraph","Paragraph Content")
-```
-
-### Changing an existing paragraph
-```lua
-CoolParagraph:Set("Paragraph New!", "New Paragraph Content!")
+CoolLabel:Set("Новый лейбл!")
 ```
 
 
-## Creating an Adaptive Input
+## Создаем параграф
+```lua
+Tab:AddParagraph("Параграф","Текст параграфа или значение")
+```
+
+### Изменяем уже существующий параграф
+```lua
+CoolParagraph:Set("Новый параграф!", "Новый текст или значение в параграфе!")
+```
+
+
+## Создаем текстовое окно
 ```lua
 Tab:AddTextbox({
-	Name = "Textbox",
-	Default = "default box input",
+	Name = "Текстовое окно",
+	Default = "Стандартное значение текстового окна(пиши сюда что хочешь)",
 	TextDisappear = true,
 	Callback = function(Value)
 		print(Value)
@@ -202,18 +202,18 @@ Tab:AddTextbox({
 })
 
 --[[
-Name = <string> - The name of the textbox.
-Default = <string> - The default value of the textbox.
-TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
-Callback = <function> - The function of the textbox.
+Name = <string> - Имя.
+Default = <string> - Стандартное значение текстового окна.
+TextDisappear = <bool> - Заставляет текст исчезнуть после потери фокуса.
+Callback = <function> - Функция текстового окна.
 ]]
 ```
 
 
-## Creating a Keybind
+## Создаем Кейбинд
 ```lua
 Tab:AddBind({
-	Name = "Bind",
+	Name = "Бинд",
 	Default = Enum.KeyCode.E,
 	Hold = false,
 	Callback = function()
@@ -222,23 +222,23 @@ Tab:AddBind({
 })
 
 --[[
-Name = <string> - The name of the bind.
-Default = <keycode> - The default value of the bind.
-Hold = <bool> - Makes the bind work like: Holding the key > The bind returns true, Not holding the key > Bind returns false.
-Callback = <function> - The function of the bind.
+Name = <string> - Название бинда.
+Default = <keycode> - Стандартное значение бинда (если хочешь поменять, выбери нужную кнопку тут: https://docs.tizen.org/application/dotnet/api/TizenFX/API4/api/Tizen.Uix.InputMethod.KeyCode.html, после чего поменяй "Enum.KeyCode.E" на "Enum.KeyCode.ТвояКнопка").
+Hold = <bool> - Нужно ли удерживать кнопку для работы бинда. Может быть true или false.
+Callback = <function> - Функция бинда.
 ]]
 ```
 
-### Chaning the value of a bind
+### Меняем значение существующего бинда
 ```lua
-Bind:Set(Enum.KeyCode.E)
+Bind:Set(Enum.KeyCode.N)
 ```
 
 
-## Creating a Dropdown menu
+## Создаем открывающееся меню
 ```lua
 Tab:AddDropdown({
-	Name = "Dropdown",
+	Name = "Мень",
 	Default = "1",
 	Options = {"1", "2"},
 	Callback = function(Value)
@@ -247,19 +247,19 @@ Tab:AddDropdown({
 })
 
 --[[
-Name = <string> - The name of the dropdown.
-Default = <string> - The default value of the dropdown.
-Options = <table> - The options in the dropdown.
-Callback = <function> - The function of the dropdown.
+Name = <string> - Имя выпадающего меню.
+Default = <string> - Стандартное значение.
+Options = <table> - Опции в выпадающем меню.
+Callback = <function> - Функция выпадающего меню.
 ]]
 ```
 
-### Adding a set of new Dropdown buttons to an existing menu
+### Добавляем пару новых кнопок в выпадающее меню
 ```lua
 Dropdown:Refresh(List<table>,true)
 ```
 
-The above boolean value "true" is whether or not the current buttons will be deleted.
+Вышеупомянутое значение «true» определяет, будут ли текущие кнопки удалены.
 ### Selecting a dropdown option
 ```lua
 Dropdown:Set("dropdown option")
