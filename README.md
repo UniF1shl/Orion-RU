@@ -145,7 +145,7 @@ Tab:AddSlider({
 	Default = 5,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
-	ValueName = "bananas",
+	ValueName = "бананы, арбузы, все что угодно",
 	Callback = function(Value)
 		print(Value)
 	end    
