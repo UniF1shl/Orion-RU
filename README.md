@@ -288,14 +288,14 @@ print(OrionLib.Flags["toggle"].Value) -- Выводит значение в ко
 ```
 Флаги работают только с переключателем, слайдером, раскрывающимся списком, биндом и палитрой цветов.
 
-### Making your interface work with configs.
-In order to make your interface use the configs function you first need to add the `SaveConfig` and `ConfigFolder` arguments to your window function. The explanation of these arguments in above.
-Then you need to add the `Flag` and `Save` values to every toggle, slider, dropdown, bind, and colorpicker you want to include in the config file.
-The `Flag = <string>` argument is the ID of an element in the config file.
-The `Save = <bool>` argument includes the element in the config file.
-Config files are made for every game the library is launched in.
+### Как заставить твой скрипт работать с конфигами.
+Чтобы твой скрипт использовал функцию конфигурации, сначала нужно добавить аргументы "SaveConfig" и "ConfigFolder" в скрипт окна (ищи его в самом начале).
+Потом тебе надо добавить функции "Flag" и "Save" в каждый переключатель, слайдер, раскрывающийся список, бинд и палитру цвета.
+Аргумент `Flag = <string>` это id элемента в конфиге.
+Аргумент `Save = <bool>` включает элемент в конфиг.
+Конфиг создается автоматически для каждой игры где был запущен скрипт.
 
-## Destroying the Interface
+## Разгружаем Скрипт
 ```lua
 OrionLib:Destroy()
 ```
