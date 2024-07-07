@@ -239,11 +239,8 @@ Bind:Set(Enum.KeyCode.N)
 ## Создаем раскрывающийся список
 ```lua
 Tab:AddDropdown({
-<<<<<<< HEAD
 	Name = "Список",
-=======
 	Name = "Меню",
->>>>>>> 066858aaae132fdf68189f661f6abe6d5543f7f7
 	Default = "1",
 	Options = {"1", "2"},
 	Callback = function(Value)
