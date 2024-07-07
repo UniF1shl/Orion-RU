@@ -1,57 +1,57 @@
-# Orion Library
-This documentation is for the stable release of Orion Library.
+# Библиотека Orion
+Эта документация относится к стабильной версии библиотеки Orion.
 
-## Booting the Library
+## Загружаем библиотеку
 ```lua
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 ```
 
 
 
-## Creating a Window
+## Создаем Окно
 ```lua
-local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Название Окна Интерфейса", HidePremium = false, SaveConfig = true, ConfigFolder = "Тест"})
 
 --[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
+Name = <string> - Название вашего интерфейса(обязательно в кавычках).
+HidePremium = <bool> - Показывает, является ли юзер премиумом или нет. true или false.
+SaveConfig = <bool> - вкл/выкл сохранение конфига. Желательно оставлять true.
+ConfigFolder = <string> - Название папки с конфигом(обязательно в кавычках).
+IntroEnabled = <bool> - Анимация при запуске. true или false
+IntroText = <string> - Текст анимации(обязательно в кавычках).
+IntroIcon = <string> - Здесь можно вставить ссылку на картинку для анимации(обязательно в кавычках).
+Icon = <string> - Тоже самое, что и "IntroIcon", только для окна интерфейса.
+CloseCallback = <function> - Функция, выполняющаяся при закрытии интерфейса.
 ]]
 ```
 
 
 
-## Creating a Tab
+## Создаем вкладку
 ```lua
 local Tab = Window:MakeTab({
-	Name = "Tab 1",
+	Name = "Вкладка 1",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 --[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+Name = <string> - Имя вкладки.
+Icon = <string> - Иконка вкладки.
+PremiumOnly = <bool> - Делает вкладку доступной только премиум юзерам(оставлять false, если скрипт платный).
 ]]
 ```
-## Creating a Section
+## Создаем Раздел
 ```lua
 local Section = Tab:AddSection({
-	Name = "Section"
+	Name = "Раздел"
 })
 
 --[[
-Name = <string> - The name of the section.
+Name = <string> - Имя раздела.
 ]]
 ```
-You can add elements to sections the same way you would add them to a tab normally.
+
 
 ## Notifying the user
 ```lua
